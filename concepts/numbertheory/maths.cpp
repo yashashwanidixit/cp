@@ -276,6 +276,40 @@ int ans=a*inv_b %m;
 //===============================================================
 
 
+#ifndef binary exponentiation other method
+
+
+/*5=101 2^5​=4+1=22+20
+So:
+
+
+a5=a4+1=a4×a1a^5 = a^{4+1} = a^4 \times a^1a5=a4+1=a4×a1
+
+
+
+
+*/
+
+int power(int n, int t) {
+    int res = 1;
+    while(n) {
+    if(n % 2) {
+        res *= a;
+        n--; 
+    }
+    else {
+        a *= a;
+        n =/2;
+    }
+}
+    return res;
+}
+
+
+
+#endif
+
+
 
 
 
