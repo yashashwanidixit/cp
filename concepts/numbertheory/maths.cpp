@@ -149,7 +149,8 @@ for gurantee gcd(2,m)=1
 ==b ^(m-2) whole %M 
 logm complexity
 here t = 3 and little fermats theorem = inverse exists only if gcd(t,m ) = 1 and m is prime in that case inverse of 3=3 ^(m−2 )mod m t = 3
-
+the actual fermats theorem : 
+a^(p-1) ≡ 1 (mod p)        if p is prime
 
 
 Where 2−12^{-1}
