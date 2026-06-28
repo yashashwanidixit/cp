@@ -1,0 +1,17 @@
+1. Try to exit inside the loop itself
+bool check(ll mid , vector<ll> &a,ll t) {
+    ll cnt = 0;
+    for(auto i: a)  {
+        cnt += mid / i;
+        if(cnt >= t) return true;
+    }
+    
+    return false;
+}
+ like here to prevent overflow
+
+
+
+2. ceil(10.0/3.0)  // floating point division → correct BUT
+ceil(n/rows)    // integer division happens FIRST → ceil(3) = 3 ❌
+or ceil(a/b) = a+b-1 / b
