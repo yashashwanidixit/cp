@@ -43,7 +43,7 @@ bool check(ll n , ll mid) {
     ll cnt = 0;
     for(ll i = 1; i <= n ;i ++) {
         cnt += min(n , mid /i) ;
-        if(cnt >= ((n*n)+1) / 2) return true;
+        if(cnt < ((n*n)+1) / 2) return false;
     }
     if(cnt < ((n*n)+1)/2) return false;
     else return true;
@@ -62,11 +62,6 @@ ll binary_search(ll n) {
             
             ans = mid;
             high = mid -1;
-            /* u cant do low= mid+1 here or in chekc
-            u cant do that cnt > target then true coz when 
-            counting cnt the number itself is also included 
-            so cnt > target should be the selection criteria
-            */
 
         }
         else low = mid + 1;

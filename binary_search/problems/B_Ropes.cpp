@@ -38,54 +38,49 @@ ll nCr(ll n, ll r) {
     if (r < 0 || r > n) return 0;
     return fact(n) * inverse(fact(r)) % MOD * inverse(fact(n-r)) % MOD;
 }
-
-bool check(ll n , ll mid) {
-    ll cnt = 0;
-    for(ll i = 1; i <= n ;i ++) {
-        cnt += min(n , mid /i) ;
-        if(cnt >= ((n*n)+1) / 2) return true;
+bool check (double mid , vector<ll>&a, ll k) {
+    ll pieces = 0;
+    for(auto len : a) {
+        pieces += (ll) (len / mid) ;
+        if(pieces >= k) return true;
     }
-    if(cnt < ((n*n)+1)/2) return false;
-    else return true;
+    return false;
+
 }
-
-
-
-
-ll binary_search(ll n) {
-    ll ans = 0 ;
-    ll low = 1 ;
-    ll high = n * n ;
-    while(low <= high) {
-        ll mid = (low + high) /2;
-        if(check(n,mid)) {
-            
+double binary_search(vector<ll> & a,ll n , ll k ){
+    double low = 0.0;
+    double high = *max_element(all(a));
+    double ans = 0;
+    for(int i = 0; i< 100 ;i ++) {//low <= high wont work as then smtms low will get stuck to mid
+        double mid = (low + high) /2;
+        if(check(mid,a,k)) {
             ans = mid;
-            high = mid -1;
-            /* u cant do low= mid+1 here or in chekc
-            u cant do that cnt > target then true coz when 
-            counting cnt the number itself is also included 
-            so cnt > target should be the selection criteria
-            */
-
+            low = mid;
         }
-        else low = mid + 1;
+        else high = mid;
     }
     return ans ;
+
 }
-
-
 
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    ll n ;
-    cin >> n;
-    cout << binary_search(n) << '\n' ;
-
+    ll n ;ll k;
+    cin >> n >> k;
+    vector<ll>a(n) ;
+    for(auto & i : a) cin >> i;
     
     
-
-   
+    cout << fixed << setprecision(10) << binary_search(a, n, k) << '\n';
     return 0;
 }
+
+
+
+//ONLY 1 MISTAKE SETTING PRECISION HERE!!!
+
+/*
+Problem saysUse setprecisionerror ≤ 10^-66, 7, 8, or 9
+
+*/
