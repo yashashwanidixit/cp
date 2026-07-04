@@ -242,6 +242,43 @@ int main(){
 #endif
 
 
+#ifndef how to use primefactors and their powers
+
+vector<ll>a(1000001) ;
+void sieve() {
+    for(ll i = 2 ;i <1000006 ; i++) {
+        if(a[i] == 0)
+ {
+    a[i] = i;
+    for(ll j= i*i ; j < 1000006 ; j= j +i) {
+        if(a[j] == 0) a[j] = i;
+    }
+ }    
+}
+}
+
+vector<pair<ll,ll>>factori(ll n) {
+    vector<pair <ll , ll>> v;
+    while(n > 1) {
+        ll exp = 0;
+        ll p = a[n] ;
+        while(n % p ==0) {
+            n = n/ p;
+            exp++;
+        }
+        v.push_back({p,exp}) ;
+    }
+    return v;
+}
+
+
+
+
+
+
+#endif
+
+
 
 
 
