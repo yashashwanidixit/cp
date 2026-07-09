@@ -1,0 +1,1 @@
+{"name":"Local: digit_query_cses","url":"c:\\mycode\\cp\\binary_search\\problems\\cses\\digit_query_cses.cpp","tests":[{"id":1783534248077,"input":"3\n7\n19\n12","output":"7\n4\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\mycode\\cp\\binary_search\\problems\\cses\\digit_query_cses.cpp","group":"local","local":true}

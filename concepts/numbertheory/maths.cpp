@@ -349,6 +349,29 @@ int power(int n, int t) {
 #endif
 
 
+#ifndef count the number of digits we have to change from 0 to n by adding 1 eveyr time
+ll count_digs(ll n) {
+    ll cnt = 0;
+    while(n > 0) {
+        cnt +=n;
+        //each time we change atleast one digit will change the 
+        //other digs that will change are added as many 0,s are there 
+        n= n/10;
+    }
+    return cnt ;
+
+}
+
+
+
+
+
+
+
+
+#endif
+
+
 
 
 

@@ -1,0 +1,15 @@
+pattern 1 -
+Array Division: "split into k parts." There's literally a k in the input. Your check will end up producing some count (number of groups needed) and you compare it to k. That's the tell — if your check function's output is a count being compared to a given number, it's flavor A.
+groups = 0
+walk through array accumulating...
+return groups <= k     // <-- comparing a COUNT to a given number
+
+one variable = the sum
+
+pattern 2=
+ Does the problem have ONE shared unknown that every item must be okay with simultaneously?
+Meeting on the Line: everyone shares the same x0. Smooth Occlusion: every tooth shares the same H.
+2 variables = time,position and
+money, height
+
+
