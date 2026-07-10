@@ -39,8 +39,7 @@ ll nCr(ll n, ll r) {
     if (r < 0 || r > n) return 0;
     return fact(n) * inverse(fact(r)) % MOD * inverse(fact(n-r)) % MOD;
 }
-
-bool check(vector<ll>&a,ld m , ll n ,ll d,ll &l , ll &r ) {
+bool check(vector<ld>&a,ld m , ll n ,ll d,ll &l , ll &r ) {
     //vector<ld >p= a; this cant happen as a is ll 
     vector<ld>p(n+1,0.0) ;
     for(ll i = 1 ; i < n+1 ; i ++) {
@@ -48,13 +47,13 @@ bool check(vector<ll>&a,ld m , ll n ,ll d,ll &l , ll &r ) {
     }
    
     vector<ld >q = p;
+    
     ld minn=q[0] ;
     for(ll i =1 ; i <n+1  ; i++) {
         if(q[i] < minn) {
             minn = q[i] ;
         }
         q[i] = minn;
-
     }
     for(ll i = d ; i <n+1 ; i ++) {
         if(p[i] >= q[i-d]) {
@@ -64,22 +63,16 @@ bool check(vector<ll>&a,ld m , ll n ,ll d,ll &l , ll &r ) {
                     r = i;
                 }
             }
-
-
-
-            return true;
+        return true;
         }
     }
     return false;
-
-   
-    
-
 }
-
-
-pair<ll,ll> binary_search(vector<ll>&a,ll n,ll d) {
+pair<ll,ll> binary_search(vector<ld>&a,ll n,ll d) {
     pair<ll,ll>v;
+    v.first= 1;
+    v.second= n;//when array consists entirely of zeroes it would be an issue
+    
     ld low = 0.0 ;
     ld high = 100; 
     
@@ -103,7 +96,7 @@ signed main() {
     cin.tie(nullptr);
     ll n ;ll d;
     cin >> n  >> d;
-    vector< ll>a(n+1);
+    vector< ld>a(n+1);
     a[0]= 0;
     for(ll i = 1 ; i<n+1; i ++) {
         cin >> a[i] ;
@@ -112,11 +105,5 @@ signed main() {
     pair<ll,ll>v;
     v= binary_search(a,n,d);
     cout << v.first << " " << v.second << endl;
-    
-
-    
-
-    
-
     return 0;
 }

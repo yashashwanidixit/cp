@@ -15,3 +15,8 @@ bool check(ll mid , vector<ll> &a,ll t) {
 2. ceil(10.0/3.0)  // floating point division → correct BUT
 ceil(n/rows)    // integer division happens FIRST → ceil(3) = 3 ❌
 or ceil(a/b) = a+b-1 / b
+
+
+
+3. ceil(x/y) where x and y are integers doesnt make sense 
+it should be (double)x/y

@@ -1,0 +1,3 @@
+//1.
+accumulate(all(a),starting_value) for summing up values in the vector
+NOTE- use 0ll for safety not just ll
