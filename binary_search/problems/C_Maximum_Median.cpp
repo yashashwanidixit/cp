@@ -59,7 +59,8 @@ bool check(vector<ll>&a,ll m , ll k,ll n) {
 
 
 
-
+//notice that this thing would fail for n even 
+//for more check leetcode median of 2 sorted arrays
 
 ll binary_search(vector<ll>&a,ll n , ll k) {
     ll low = *min_element(all(a));
