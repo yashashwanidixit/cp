@@ -1,0 +1,10 @@
+////1. an array where sum of elements is divisible by each element-
+Smallest such array is - 1,2,3.
+now lcm = 6
+sum + lcm  divides each element for sure including lcm so add lcm
+1,2,3,6 now add 2*lcm as that would be distinct and divisible by all of them
+1,2,3,6,12 and so on...............
+
+
+
+////2.
