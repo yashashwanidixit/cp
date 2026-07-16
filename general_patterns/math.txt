@@ -8,3 +8,6 @@ sum + lcm  divides each element for sure including lcm so add lcm
 
 
 ////2.
+ways to select odd number of occurencies and even number of occurencies out of n total 
+occurencies = power(2,n-1)
+solve- omar and alternating sums 
