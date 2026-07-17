@@ -11,3 +11,19 @@ sum + lcm  divides each element for sure including lcm so add lcm
 ways to select odd number of occurencies and even number of occurencies out of n total 
 occurencies = power(2,n-1)
 solve- omar and alternating sums 
+
+
+
+
+///3.
+if we are talking about the xor of mex of permutations beign eqial 
+to x then we should remember that-
+a. x xor n ( assunimg permutations will have 0 to n-1) 
+will be the xor that would want out of n-2 elementd.
+
+b. if x xor n bit length > n-1 bit length not possible
+thats coz with 0 to n-1 we can create for eg n-1=4 we can
+create 4,5,6,7 xor of mexs coz these are max bit set 
+
+
+
