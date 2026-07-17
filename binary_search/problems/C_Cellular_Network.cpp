@@ -57,7 +57,8 @@ bool check(ll mid,vector<ll>&a,vector<ll>&v,ll n,ll m) {
 
 ll binary_search(vector<ll>&a,vector<ll>&v,ll n,ll m) {
     ll low =0;
-    ll high = abs(*max_element(all(a))-*min_element(all(v)));
+    ll high = 2000000000LL;   // this is not correct coz what if max is closest to all the towers and min is not
+    //abs(*max_element(all(a))-*min_element(all(v)));
     ll ans= 0;
     while(low <= high) {
         
