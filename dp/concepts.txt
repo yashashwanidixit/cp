@@ -1,0 +1,57 @@
+//1.staircase problem-
+we can take either 1 or 2 steps no of ways to climb n stair
+dp[i] = dp[i-1] + dp[i-2]
+we dont care how we reached the ith staircase
+
+version-2 at most k jumps
+//we cant say it doent matter how we got here
+so state- dp[i][j] sum of (dp[i][j])
+dp[i][k] = dp[i-1][k-1] + dp[i-2][k-1]
+
+
+
+
+//2.Minimum path sum
+Given a grid, find a path from the top-left 
+to the bottom-right corner that minimizes the sum of numbers along the path. 
+You can only move right or down.
+
+
+NOTE-IF PROBLEM ASKS TO OPTIMIZE A VALUE AND NOT
+COUNT NUMBER OF WAYS TRY TO USE GREEDY APPROACH
+BUT IF THIS DOESNT WORK ITS BETTER TO THINK IN dp
+
+//3// given n and an array count way s to write n 
+as the sum of those numbers
+dp[0] = 1
+for i in 0...n-1:
+for x in nums:
+dp[i] += dp[i-x] ;
+here 1,2,1 and 1,1,2 are different combinations
+(given in problem)
+//dont add +1 becuase we are not counting number of coins we are counting combinations 
+              // and if dp[i-c] is included then we know fs that other 
+              //would be dp[i]-dp[i-c]
+
+
+//4// minimum number of coins 
+dp[0]=0
+other= inf
+for i in 0...n-1:
+for x in nums:
+dp[i] = min(dp[i-x]+1,dp[i] );
+
+//5.// number of wways to make amount n from denomiantions of coins
+different from third case as here 1,2,1 will be same 1,1,2
+in //3 if we reach dp[5] as 4+1 and 4 includes 2+2
+ or if we reach dp[5] as 2+1 where left 2 then these are different ways
+
+
+//one way is to count the number lexicographically increasing arrays
+so dp[sum][last] as the next element cannot be larger
+time com= o(n times k squared)
+for each of n times k states we consider k transitions 
+so complexity is n k squared
+
+
+NOTE- USE UNSIGNED LONG LONG WHEN IT OVERFLOWS

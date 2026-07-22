@@ -1,0 +1,49 @@
+//1.
+there is a vector of pairs start ,end
+we have to find the overlapping intervals
+since the start and the end only matter
+so create vector
+for every start+=1(as dupliate start values can also occur)
+and for every end-=1
+then sort keep iterating and maintain var sum+1 or-1
+if sum increases then cnt++
+return cnt;
+refer -
+
+void solve() {
+    ll n;cin >> n;
+    vector<pair<ll,ll>>a(n,{0,0});
+    for(ll i =0 ; i < n ; i++) {
+        cin >> a[i].first;
+        cin >> a[i].second;
+ 
+    }
+    map<ll,int>v;
+ 
+    for(ll i = 0 ; i < n ;  i++) {
+        v[a[i].first] +=1;
+        v[a[i].second] -=1;// we are adding and
+        //putting it equal coz same year 2 people
+        //can born/die so events mights be repeated
+        
+    }
+    ll cnt =0 ;
+    ll best =INT_MIN;
+    ll year;
+    for(auto  &i: v) {
+        cnt += i.second;
+        if(cnt > best) {
+            best= cnt ;
+            year = i.first;
+        }
+    }
+    cout << year<< " "<< best << endl;
+}
+    
+====================================================================
+
+
+2.// refer starred cf questions
+ 
+    
+    
