@@ -60,7 +60,7 @@ int main(){
 
 
 //sieve of eratothemes time complexity=o(nlog(log(n)))
-
+//to find all the prime numbers up to a specified number 
 
 int main(){
     int n=100;
@@ -91,7 +91,7 @@ int main(){
 #ifdef third
 int main(){
     int n;
-    int flag=false
+    int flag=false;
     for(int i=2;i*i<=n;i++){
         
         if(n%i==0){
