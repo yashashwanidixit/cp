@@ -1,0 +1,5 @@
+//1. to find the total number of overlaps between intervals
+dont do low high new low new high because then we would be only counting between consecuitve intervals
+pattern---
+maintain a start and end vector start vector contains the starting indexes and end index contains the end index
+then iterate and increment cnt when start[i] is 1 decrease when end[i] is one and so we will know count at some time

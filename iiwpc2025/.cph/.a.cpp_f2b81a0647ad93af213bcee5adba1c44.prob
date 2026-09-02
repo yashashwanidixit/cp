@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"c:\\mycode\\cp\\iiwpc2025\\a.cpp","tests":[{"id":1788079648889,"input":"1\n7\npattern\npersona\n4\nabc\nabccdef\nabcdefg\nabcccef","output":"NO\nYES\nYES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\mycode\\cp\\iiwpc2025\\a.cpp","group":"local","local":true}

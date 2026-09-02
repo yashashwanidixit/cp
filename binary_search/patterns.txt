@@ -12,5 +12,9 @@ Meeting on the Line: everyone shares the same x0. Smooth Occlusion: every tooth 
 2 variables = time,position and
 money, height
 
+pattern3 -
+does not binary search on the answer because the way to caculate the answer is actually fixed
+we are suing binary search for finding the bucket /segment in which a number lies see problem d cf 1117 div2
+
 
 

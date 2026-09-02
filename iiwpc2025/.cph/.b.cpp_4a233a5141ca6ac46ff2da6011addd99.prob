@@ -1,0 +1,1 @@
+{"name":"Local: b","url":"c:\\mycode\\cp\\iiwpc2025\\b.cpp","tests":[{"id":1788082772162,"input":"10 7 9\n58 36 81 -7 46 49 87 -58 98 -15","output":"390"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\mycode\\cp\\iiwpc2025\\b.cpp","group":"local","local":true}
