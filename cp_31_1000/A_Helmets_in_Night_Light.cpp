@@ -1,19 +1,21 @@
-#include <bits/stdc++.h>
++#include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
 typedef long double ld;
 const ll MOD = 1000000007;
 const int MAXN = 2000001;
-ll b[MAXN];
-
+ll v[MAXN];
+//Each person/item gives you some number of opportunities, 
+//and every opportunity from that person has the same cost. 
+//sYou need only a limited number of opportunities.
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 
 void precompute() {
-    b[0] = 1;
+    v[0] = 1;
     for (ll i = 1; i < MAXN; i++)
-        b[i] = (i * b[i-1]) % MOD;
+        v[i] = (i * v[i-1]) % MOD;
 }
 
 ll power(ll n, ll k) {
@@ -28,7 +30,7 @@ ll power(ll n, ll k) {
 }
 
 ll fact(ll n) {
-    return b[n];
+    return v[n];
 }
 
 ll inverse(ll x) {
@@ -41,47 +43,39 @@ ll nCr(ll n, ll r) {
 }
 
 void solve() {
-    string s;
-    cin >> s;
-    if(s.length() == 1) {
-        cout <<1 <<endl;
-        return;
+    ll n ;ll p ;
+    cin >> n >> p;
+    vector<ll>a(n),b(n) ;
+    for(auto &i:a)cin >> i;
+    for(auto &i:b)cin >>i;
+    ll ans = p ;
+    vector<vector<ll>>c;
+    
+    for(ll i=0 ; i  < n ; i++) {
+        c.push_back({b[i],a[i]}) ;
     }
-    ll c1 = 0;
-    ll c2 = 0;
-    for(auto i:s) {
-        if(i == '0') c1++;
-        else if(i =='1') c2++;
-    }
-    ll c3 = 0; 
-    ll c4= 0 ;
-
-    ll left = s.length();
-    for(ll i = 0 ; i < s.length() ;i++) {
-        if(s[i] == '0' ) {
-            c3++;
-
-        }
-        else if(s[i] =='1') {
-            c4++ ;
-        }
-        if(c3 > c2)  {
-            left = i ;
-            break;
-        }
-        else if(c4> c1) {
-            left = i;
-            break;
-        }
+    sort(all(c)) ;
+    
+   
+    
+    ll rem = n-1;
+    for(auto x :c) {
+        ans += min(rem , x[1])*min(x[0], p) ;
+        rem-= min(rem,x[1]) ;
+        if(rem ==0) break;
 
     }
-    cout << s.length() - left << endl;
+    cout << ans << endl;
+
+
+
 
 }
 
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
+
     precompute();
 
     ll t;
@@ -93,3 +87,9 @@ signed main() {
 
     return 0;
 }
+
+/*
+
+cout << fixed << setprecision(10) << ans << '\n';
+
+*/
